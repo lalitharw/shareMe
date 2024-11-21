@@ -17,6 +17,7 @@ export const Login = () => {
                         loop
                         controls={false}
                         autoPlay
+                        muted
                         className='w-full h-full  object-cover'
                     />
                 </div>
