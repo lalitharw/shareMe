@@ -1,6 +1,9 @@
 // react-router-dom
 import { useNavigate } from 'react-router-dom'
 
+// firebase utils
+import {signInWithGooglePopUp} from "../services/firebase.util"
+
 // assets
 import bgVideo from "../assets/bgVideo.mp4"
 
@@ -8,6 +11,18 @@ import bgVideo from "../assets/bgVideo.mp4"
 import { FcGoogle } from 'react-icons/fc'
 
 export const Login = () => {
+    const navigate = useNavigate();
+
+    // google login function
+    const signInWithGoogle = async(e) => {
+        e.preventDefault()
+        const data = await signInWithGooglePopUp()
+        if(data){
+            navigate("/")
+        }
+
+    }
+
     return (
         <>
             <div className='flex justify-center items-center flex-col  h-screen'>
@@ -22,10 +37,11 @@ export const Login = () => {
                     />
                 </div>
                 <div className=' px-4 py-2 flex justify-center items-center shadow-2xl rounded absolute left-0 right-0 bottom-0 top-0 bg-[#030a147a]'>
-
-                    <div className='flex items-center bg-white px-3 py-2 rounded shadow-2xl'>
+                    <form>
+                    <button onClick={signInWithGoogle} className='flex items-center bg-white px-3 py-2 rounded shadow-2xl'>
                         <FcGoogle className='mr-4' /> Sign in with Google
-                    </div>
+                    </button>
+                    </form>
                 </div>
             </div>
         </>
