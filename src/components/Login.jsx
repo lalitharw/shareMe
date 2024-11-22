@@ -17,6 +17,12 @@ export const Login = () => {
     const signInWithGoogle = async(e) => {
         e.preventDefault()
         const data = await signInWithGooglePopUp()
+
+        // saving data to local storage
+
+        // don't forget to turn object from google to string
+        localStorage.setItem("google_login_user_data",JSON.stringify(data.user))
+
         if(data){
             navigate("/")
         }
