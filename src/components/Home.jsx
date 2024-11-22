@@ -1,17 +1,16 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 // context
-import {GoogleUserDataContext} from "../context/context"
+import { GoogleUserDataContext } from "../context/context";
 
 export const Home = () => {
-
-    const {googleLogin} = useContext(GoogleUserDataContext)
-
-    const google_data = JSON.parse(localStorage.getItem("google_login_user_data"));
+    const {data} = useContext(GoogleUserDataContext)
+    // console.log(data)
+    
     
     return (
         <>
-            <h1>Home {googleLogin.displayName}</h1>
+            <h1>Home {data[0]?.displayName}</h1>
         </>
     )
 }

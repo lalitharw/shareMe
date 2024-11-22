@@ -1,3 +1,5 @@
+import { useContext } from 'react'
+
 // react-router-dom
 import { useNavigate } from 'react-router-dom'
 
@@ -10,8 +12,13 @@ import bgVideo from "../assets/bgVideo.mp4"
 // react icons
 import { FcGoogle } from 'react-icons/fc'
 
+//context
+import { GoogleUserDataContext } from '../context/context'
+
 export const Login = () => {
     const navigate = useNavigate();
+
+    const {addGoogleLoginData} = useContext(GoogleUserDataContext)
 
     // google login function
     const signInWithGoogle = async(e) => {
@@ -24,6 +31,7 @@ export const Login = () => {
         localStorage.setItem("google_login_user_data",JSON.stringify(data.user))
 
         if(data){
+            addGoogleLoginData(data.user)
             navigate("/")
         }
 

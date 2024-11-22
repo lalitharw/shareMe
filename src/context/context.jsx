@@ -1,31 +1,29 @@
 import { createContext, useReducer  } from "react";
 
-// reducer
-import { GoogleDataReducer } from "./reducers/GoogleDataReducer";
+// importing reducer
+import { UserGoogleLogin } from "./reducers/UserGoogleLogin";
 
-const initialState = JSON.parse(localStorage.getItem("google_user_login_data") || []);
+// initialState
 
+const initialState = JSON.parse(localStorage.getItem("google_login_user_data")) || [];
+
+// creating context
 export const GoogleUserDataContext = createContext(initialState)
 
-export const Provider = ({children}) => {
-    const [googleLogin,dispatch] = useReducer(GoogleDataReducer,initialState)
+export const GoogleUserDataProvider = ({children}) => {
+    const [data,dispatch] = useReducer(UserGoogleLogin,initialState)
 
-    // actions
-    const addGoogleUserLoginData = (data) => {
+    const addGoogleLoginData = (data) => {
         dispatch({type:"ADD_USER", payload:data})
     }
-
+    
 
     return (
-        <GoogleUserDataContext.Provider
-         value={{
-            addGoogleUserLoginData,
-            googleLogin
-         }}
-        >
+        <GoogleUserDataContext.Provider value={{
+            addGoogleLoginData,
+            data
+        }}>
             {children}
         </GoogleUserDataContext.Provider>
     )
 }
-
-// export const 

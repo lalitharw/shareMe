@@ -1,4 +1,4 @@
-export const GoogleDataReducer = (state,action) => {
+export const UserGoogleLogin = (state,action) => {
     let data;
 
     switch(action.type){

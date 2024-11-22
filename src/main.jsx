@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.jsx'
 
 // Provider
-import { Provider } from './context/context.jsx'
+import { GoogleUserDataProvider } from './context/context.jsx'
 
 // react router dom
 import { BrowserRouter } from 'react-router-dom'
@@ -12,9 +12,9 @@ import { BrowserRouter } from 'react-router-dom'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-    <Provider>
+    <GoogleUserDataProvider>
       <App />
-    </Provider>
+    </GoogleUserDataProvider>
     </BrowserRouter>
   </StrictMode>,
 )
