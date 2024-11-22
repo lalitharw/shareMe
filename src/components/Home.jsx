@@ -10,7 +10,7 @@ export const Home = () => {
     
     return (
         <>
-            <h1>Home {data[0]?.displayName}</h1>
+            <h1 className="w-screen h-screen flex justify-center items-center font-semibold">{data[0]?.displayName}</h1>
         </>
     )
 }
