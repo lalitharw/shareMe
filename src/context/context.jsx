@@ -16,12 +16,17 @@ export const GoogleUserDataProvider = ({children}) => {
     const addGoogleLoginData = (data) => {
         dispatch({type:"ADD_USER", payload:data})
     }
+
+    const logout = () => {
+        dispatch({type:"USER_LOGOUT"})
+    }
     
 
     return (
         <GoogleUserDataContext.Provider value={{
             addGoogleLoginData,
-            data
+            data,
+            logout
         }}>
             {children}
         </GoogleUserDataContext.Provider>
