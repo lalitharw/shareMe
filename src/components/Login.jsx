@@ -31,6 +31,7 @@ export const Login = () => {
         localStorage.setItem("google_login_user_data",JSON.stringify(data.user))
 
         if(data){
+            // adding data to context GoogleUserDataContext
             addGoogleLoginData(data.user)
             navigate("/")
         }
