@@ -18,7 +18,7 @@ export const Home = () => {
 
   return (
     <>
-      {data && (
+      {data[0] && (
         <>
           <div className="w-screen h-screen flex flex-col justify-center items-center font-semibold">
             <h1>{data[0]?.displayName}</h1>
