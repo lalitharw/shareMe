@@ -6,6 +6,9 @@ import { GoogleUserDataContext } from "../context/context";
 // react-router-dom
 import { useNavigate } from "react-router-dom";
 
+// components
+import { Header } from "./common/header";
+
 export const Home = () => {
   const navigate = useNavigate();
 
@@ -17,17 +20,9 @@ export const Home = () => {
   };
 
   return (
-    <>
-      {data[0] && (
-        <>
-          <div className="w-screen h-screen flex flex-col justify-center items-center font-semibold">
-            <h1>{data[0]?.displayName}</h1>
-            <div>
-              <button onClick={handleUserLogout}>Logout</button>
-            </div>
-          </div>
-        </>
-      )}
-    </>
+    
+    <Header />
+
+
   );
 };
