@@ -6,8 +6,11 @@ import { GoogleUserDataContext } from "../context/context";
 // react-router-dom
 import { useNavigate } from "react-router-dom";
 
+
+
 // components
 import { Header } from "./common/header";
+import { MasonryLayout } from "./common/Masory";
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -20,8 +23,12 @@ export const Home = () => {
   };
 
   return (
-    
-    <Header />
+    <>
+      <Header />
+      <div className="flex justify-center  px-[20px]  py-[50px]">
+        <MasonryLayout />
+      </div>
+    </>
 
 
   );
