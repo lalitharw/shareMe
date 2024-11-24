@@ -17,14 +17,8 @@ export const Home = () => {
 
   const { data, logout } = useContext(GoogleUserDataContext);
 
-  const handleUserLogout = () => {
-    logout();
-    navigate("/login");
-  };
-
   return (
     <>
-      <Header />
       <div className="flex justify-center  px-[20px]  py-[50px]">
         <MasonryLayout />
       </div>
