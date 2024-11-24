@@ -11,7 +11,7 @@ export const UserDetails = () => {
                 <h2 className="text-white text-2xl font-bold mt-1">John Doe</h2>
             </div>
 
-            <h2 className="text-white text-2xl font-bold my-5">Pins Posted</h2>
+            <h2 className="text-white text-2xl font-bold mt-8 px-[20px]">Pins Posted</h2>
             <MasonryLayout />
         </>
     )

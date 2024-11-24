@@ -19,9 +19,7 @@ export const Home = () => {
 
   return (
     <>
-      <div className="flex justify-center  px-[20px]  py-[50px]">
-        <MasonryLayout />
-      </div>
+      <MasonryLayout />
     </>
 
 

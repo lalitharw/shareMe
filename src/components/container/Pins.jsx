@@ -14,7 +14,7 @@ export const Pins = () => {
     return (
         <>
             <Header />
-            <div className="container px-[20px]  py-[50px]">
+           
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/pin-detail/:pinId" element={<PinDetails />} />
@@ -23,7 +23,7 @@ export const Pins = () => {
                     <Route path="category/:categoryName" element={<CategoryPin />} />
                     <Route path="create-post" element={<CreatePost />} />
                 </Routes>
-            </div>
+           
         </>
     )
 }

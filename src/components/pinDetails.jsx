@@ -51,7 +51,7 @@ export const PinDetails = () => {
                 </Link>
             </div>
 
-            <h2 className="text-white text-2xl font-bold my-6">See More Pins</h2>
+            <h2 className="text-white text-2xl font-bold mt-8 px-[20px]">See More Pins</h2>
             <MasonryLayout />
         </>
     )
