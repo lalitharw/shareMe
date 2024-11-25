@@ -2,6 +2,9 @@
 import { MasonryLayout } from "./common/Masory"
 
 export const UserDetails = () => {
+    const params = new URLSearchParams(window.location.search)
+
+    console.log(params.get("data"))
     return (
         <>
             <div className="flex justify-center items-center flex-col">
